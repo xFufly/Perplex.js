@@ -11,7 +11,7 @@ Features:
 Installation:
 
 ```bash
-npm install
+npm install 
 ```
 
 

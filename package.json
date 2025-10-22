@@ -9,7 +9,7 @@
   "cli": "node examples/cli.js"
   },
   "keywords": ["perplexity", "perplexity.ai", "ai", "client"],
-  "author": "generated",
+  "author": "DIDELOT Tim",
   "license": "MIT",
   "dependencies": {
     "undici": "^6.0.0"
