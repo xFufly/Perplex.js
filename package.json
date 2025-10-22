@@ -1,12 +1,23 @@
 {
-  "name": "perplexity-js",
+  "name": "perplex.js",
   "version": "0.1.0",
   "description": "Minimal Node.js client for the Perplexity API",
   "type": "module",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xFufly/Perplex.js.git"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "test": "node example.js",
-  "cli": "node examples/cli.js"
+    "cli": "node examples/cli.js"
   },
   "keywords": ["perplexity", "perplexity.ai", "ai", "client"],
   "author": "DIDELOT Tim",
