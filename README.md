@@ -11,7 +11,7 @@ Features:
 Installation:
 
 ```bash
-npm install 
+npm install https://github.com/xFufly/Perplex.js
 ```
 
 
@@ -19,7 +19,7 @@ npm install
 Usage (example):
 
 ```js
-import { PerplexityClient } from './src/index.js';
+import { PerplexityClient } from 'perplex.js';
 const c = new PerplexityClient();
 // To use your account, manually export cookies from your browser
 // (for example using a cookie export extension) and save them
