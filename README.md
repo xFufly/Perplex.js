@@ -3,9 +3,10 @@
 
 This small library provides a minimal client to query the Perplexity API.
 
-Caractéristiques:
-- Requête synchronisée vers l'endpoint SSE `/rest/sse/perplexity_ask`.
-- Méthodes: `search` (retourne la réponse finale), `streamSearch` (async iterator pour lire les messages en streaming).
+
+Features:
+- Synchronous request to the SSE endpoint `/rest/sse/perplexity_ask`.
+- Methods: `search` (returns the final response), `streamSearch` (async iterator for streaming messages).
 
 Installation:
 
