@@ -1,5 +1,5 @@
 
-# Perplexity.js — Minimal Node.js client for Perplexity AI
+# Perplex.js — Minimal Node.js client for Perplexity AI
 
 This small library provides a minimal client to query the Perplexity API.
 
