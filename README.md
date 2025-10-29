@@ -11,7 +11,7 @@ Features:
 Installation:
 
 ```bash
-npm install https://github.com/xFufly/Perplex.js
+npm install perplex.js
 ```
 
 
