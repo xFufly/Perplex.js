@@ -31,7 +31,8 @@ export default class PerplexityClient {
             auto: [null],
             pro: [null, 'sonar', 'gpt-4.5', 'gpt-4o', 'claude 3.7 sonnet', 'gemini 2.0 flash', 'grok-2'],
             reasoning: [null, 'r1', 'o3-mini', 'claude 3.7 sonnet', 'gpt5', 'gpt5_thinking', 'claude37sonnetthinking'],
-            'deep research': [null]
+            'deep research': [null],
+            copilot: ['grok41reasoning']
         };
     }
 
@@ -45,7 +46,8 @@ export default class PerplexityClient {
             auto: [null],
             pro: [null, 'sonar', 'gpt-4.5', 'gpt-4o', 'claude 3.7 sonnet', 'gemini 2.0 flash', 'grok-2'],
             reasoning: [null, 'r1', 'o3-mini', 'claude 3.7 sonnet', 'gpt5', 'gpt5_thinking'],
-            'deep research': [null]
+            'deep research': [null],
+            copilot: ['grok41reasoning']
         };
         return modelPreferences[mode] ?? modelPreferences.auto;
     }
@@ -81,6 +83,9 @@ export default class PerplexityClient {
             },
             'deep research': {
                 null: 'pplx_alpha'
+            },
+            copilot: {
+                'grok41reasoning': 'grok41reasoning'
             }
         };
 
