@@ -155,6 +155,7 @@ export default class PerplexityClient {
             prompt_source: "user",
             source: 'default',
             sources,
+            timezone: "Etc/GMT-1",
             version: this.version
         };
 

@@ -1,6 +1,6 @@
 {
   "name": "perplex.js",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Minimal Node.js client for the Perplexity API",
   "type": "module",
   "main": "src/index.js",
