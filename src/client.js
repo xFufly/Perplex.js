@@ -67,7 +67,13 @@ export default class PerplexityClient {
     // Build the payload for the request
     _buildPayload(query, opts = {}) {
         const {
-            mode = 'auto', model = null, sources = ['web'], attachments = [], language = 'en-US', follow_up = null, incognito = false
+            mode = 'auto', 
+            model = null, 
+            sources = ['web'], 
+            attachments = [], 
+            language = 'en-US', 
+            follow_up = null, 
+            incognito = false
         } = opts;
 
         const attachmentsFinal = attachments.concat(follow_up && follow_up.attachments ? follow_up.attachments : []);
@@ -127,14 +133,26 @@ export default class PerplexityClient {
         }
 
         const params = {
+            always_search_override: false,
             attachments: attachmentsFinal,
+            browser_agent_allow_once_from_toggle: false,
+            client_coordinates: null,
+            dsl_query: query,
+            force_enable_browser_agent: false,
             frontend_context_uuid: cryptoRandomUUID(),
             frontend_uuid: cryptoRandomUUID(),
             is_incognito: incognito,
+            is_nav_suggestions_disabled: false,
+            is_related_query: false,
+            is_sponsored: false,
             language,
             last_backend_uuid: follow_up ? follow_up.backend_uuid : null,
+            local_search_enabled: false,
+            mentions: [],
             mode: mode === 'auto' ? 'concise' : 'copilot',
             model_preference: modelPref,
+            override_no_search: false,
+            prompt_source: "user",
             source: 'default',
             sources,
             version: this.version
