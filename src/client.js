@@ -9,7 +9,9 @@ function defaultHeaders(cookie) {
     const headers = {
         'accept': 'text/event-stream, text/plain, */*',
         'content-type': 'application/json',
-        'user-agent': 'perplexity-js/0.1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
+        'origin': 'https://www.perplexity.ai',
+        'referer': 'https://www.perplexity.ai/'
     };
 
     if (cookie) headers['cookie'] = typeof cookie === 'string' ? cookie : Object.entries(cookie).map(([k, v]) => `${k}=${v}`).join('; ');
