@@ -5,7 +5,7 @@ import {
     parseSSE
 } from './sseParser.js';
 
-function defaultHeaders(cookie) {
+function defaultHeaders(cookie, xRequestId) {
     const headers = {
         'accept': 'text/event-stream',
         'accept-language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7',
@@ -20,10 +20,10 @@ function defaultHeaders(cookie) {
         'sec-fetch-dest': 'empty',
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
-        'x-perplexity-request-reason': 'perplexity-query-state-provider',
-        // x-request-id ?
+        'x-perplexity-request-reason': 'perplexity-query-state-provider'
     };
 
+    if (xRequestId) headers['x-request-id'] = xRequestId;
     if (cookie) headers['cookie'] = typeof cookie === 'string' ? cookie : Object.entries(cookie).map(([k, v]) => `${k}=${v}`).join('; ');
     return headers;
 }
@@ -212,8 +212,11 @@ export default class PerplexityClient {
             throw new Error('File upload support is not implemented in this Node client yet');
         }
 
+
         const payload = this._buildPayload(query, opts);
         const url = `${this.base}/rest/sse/perplexity_ask`;
+        // Récupère frontend_uuid pour x-request-id
+        const xRequestId = payload.params && payload.params.frontend_uuid ? payload.params.frontend_uuid : undefined;
 
         const {
             statusCode,
@@ -222,7 +225,7 @@ export default class PerplexityClient {
         } = await this._fetch(url, {
             method: 'POST',
             body: JSON.stringify(payload),
-            headers: defaultHeaders(this.cookies)
+            headers: defaultHeaders(this.cookies, xRequestId)
         });
 
         if (statusCode >= 400) {
@@ -282,8 +285,11 @@ export default class PerplexityClient {
             throw new Error('File upload support is not implemented in this Node client yet');
         }
 
+
         const payload = this._buildPayload(query, opts);
         const url = `${this.base}/rest/sse/perplexity_ask`;
+        // Récupère frontend_uuid pour x-request-id
+        const xRequestId = payload.params && payload.params.frontend_uuid ? payload.params.frontend_uuid : undefined;
 
         const {
             statusCode,
@@ -292,7 +298,7 @@ export default class PerplexityClient {
         } = await this._fetch(url, {
             method: 'POST',
             body: JSON.stringify(payload),
-            headers: defaultHeaders(this.cookies)
+            headers: defaultHeaders(this.cookies, xRequestId)
         });
 
         if (statusCode >= 400) {
