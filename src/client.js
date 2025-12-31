@@ -32,7 +32,7 @@ export default class PerplexityClient {
             pro: [null, 'sonar', 'gpt-4.5', 'gpt-4o', 'claude 3.7 sonnet', 'gemini 2.0 flash', 'grok-2'],
             reasoning: [null, 'r1', 'o3-mini', 'claude 3.7 sonnet', 'gpt5', 'gpt5_thinking', 'claude37sonnetthinking'],
             'deep research': [null],
-            copilot: ['grok41reasoning']
+            copilot: [null, 'grok41nonreasoning', 'grok41reasoning', 'sonar', 'gpt52', 'gpt52_thinking', 'gemini30pro', 'gemini30flash', 'gemini30flash_high', 'kimik2thinking', 'claude45sonnet', 'claude45sonnetthinking']
         };
     }
 
@@ -47,7 +47,7 @@ export default class PerplexityClient {
             pro: [null, 'sonar', 'gpt-4.5', 'gpt-4o', 'claude 3.7 sonnet', 'gemini 2.0 flash', 'grok-2'],
             reasoning: [null, 'r1', 'o3-mini', 'claude 3.7 sonnet', 'gpt5', 'gpt5_thinking'],
             'deep research': [null],
-            copilot: ['grok41reasoning']
+            copilot: [null, 'grok41nonreasoning', 'grok41reasoning', 'sonar', 'gpt52', 'gpt52_thinking', 'gemini30pro', 'gemini30flash', 'gemini30flash_high', 'kimik2thinking', 'claude45sonnet', 'claude45sonnetthinking']
         };
         return modelPreferences[mode] ?? modelPreferences.auto;
     }
@@ -85,7 +85,18 @@ export default class PerplexityClient {
                 null: 'pplx_alpha'
             },
             copilot: {
-                'grok41reasoning': 'grok41reasoning'
+                null: 'pplx_pro',
+                'grok41nonreasoning': 'grok41nonreasoning',
+                'grok41reasoning': 'grok41reasoning',
+                'sonar': 'experimental',
+                'gpt52': 'gpt52',
+                'gpt52_thinking': 'gpt52_thinking',
+                'gemini30pro': 'gemini30pro',
+                'gemini30flash': 'gemini30flash',
+                'gemini30flash_high': 'gemini30flash_high',
+                'kimik2thinking': 'kimik2thinking',
+                'claude45sonnet': 'claude45sonnet',
+                'claude45sonnetthinking': 'claude45sonnetthinking'
             }
         };
 
